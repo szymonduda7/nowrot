@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Usługi dekarskie | PHU Nowrot Grzegorz</title>
-<meta name="description" content="Pełna oferta usług dekarskich PHU Nowrot Grzegorz: krycie dachów, remonty, wiaty i pergole, rynny, obróbki blacharskie, elewacje i ciesielstwo. Żory i okolice." />
+<meta name="description" content="Pełna oferta usług dekarskich PHU Nowrot Grzegorz: krycie dachów, remonty, wiaty i pergole, rynny, obróbki blacharskie, elewacje, ciesielstwo, dachy hal, renowacje kamienic i realizacje za granicą. Żory i okolice." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317120F'/%3E%3Cpath d='M20 55 L50 28 L80 55' stroke='%23D0201B' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M30 55 V72 H70 V55' stroke='%23F5F2EC' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,6 +67,18 @@
   .svc-figure { overflow: hidden; }
   .svc-figure img { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
   .svc-card:hover .svc-figure img { transform: scale(1.05); }
+
+  .gal-item { cursor: zoom-in; }
+  .gal-item img { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .gal-item:hover img { transform: scale(1.06); }
+  .gal-item::after { content: ""; position: absolute; inset: 0; background: rgba(23,18,15,0); transition: background-color .4s ease; border-radius: inherit; pointer-events: none; }
+  .gal-item:hover::after, .gal-item:focus-visible::after { background: rgba(23,18,15,.35); }
+  .gal-caption { transition: opacity .3s ease, transform .3s ease; }
+
+  #lightbox { transition: opacity .25s ease; }
+  #lightbox[data-open="false"] { pointer-events: none; opacity: 0; }
+  #lightbox[data-open="true"] { pointer-events: auto; opacity: 1; }
+  #lightbox img { transition: transform .25s ease; }
 </style>
 </head>
 <body class="bg-cloud text-ink font-sans antialiased">
@@ -77,10 +89,7 @@
 <header id="site-header" class="sticky top-0 z-50 bg-cloud/90 backdrop-blur border-b border-line">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 group">
-      <span class="leading-tight">
-        <span class="block font-display font-900 text-lg tracking-tight text-ink">Grzegorz Nowrot</span>
-        <span class="block font-mono text-[0.62rem] uppercase tracking-[0.22em] text-muted">Dekarz &middot; Żory</span>
-      </span>
+      <img src="images/logo.webp" alt="PHU Nowrot Grzegorz" class="h-11 sm:h-12 w-auto shrink-0" width="200" height="60" />
     </a>
 
     <nav class="hidden md:flex items-center gap-9 font-medium text-sm text-ink/80">
@@ -123,7 +132,7 @@
         Strona główna
       </a>
       <h1 class="h-display text-4xl sm:text-6xl max-w-2xl">Pełna oferta <span class="text-red">usług dekarskich</span></h1>
-      <p class="mt-6 text-cloud/70 leading-[1.7] max-w-xl text-lg">Sześć obszarów, w których pracujemy najczęściej. Każde zlecenie zaczyna się od oględzin na miejscu i jasnej wyceny na piśmie, zanim cokolwiek zaczniemy.</p>
+      <p class="mt-6 text-cloud/70 leading-[1.7] max-w-xl text-lg">Od krycia dachów, przez elewacje i konstrukcje drewniane, po realizacje na halach i za granicą. Każde zlecenie zaczyna się od oględzin na miejscu i jasnej wyceny na piśmie, zanim cokolwiek zaczniemy.</p>
     </div>
   </section>
 
@@ -131,108 +140,376 @@
   <section class="bg-cloud">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 flex flex-col gap-16">
 
-      <article id="krycie-dachow" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1">
-          <img src="images/4.webp" alt="Dekarz układający dachówkę ceramiczną podczas krycia dachu" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2">
-          <span class="font-mono text-red text-sm font-semibold">01</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Krycie dachów</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Kompletne pokrycie dachu od deskowania i membrany po ułożenie ostatniej dachówki. Pracujemy na dachówce ceramicznej, cementowej i blachodachówce, dobranej do konstrukcji więźby i budżetu inwestycji.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Deskowanie i membrana dachowa</li>
-            <li class="relative pl-5 marker">Dachówka ceramiczna i cementowa</li>
-            <li class="relative pl-5 marker">Blachodachówka</li>
-            <li class="relative pl-5 marker">Wentylacja połaci dachowej</li>
-          </ul>
-        </div>
-      </article>
-
-      <article id="remonty-dachow" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1 md:order-2">
-          <img src="images/3.webp" alt="Naprawiony dach kryty czerwoną dachówką" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2 md:order-1">
-          <span class="font-mono text-red text-sm font-semibold">02</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Remonty i naprawy</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Naprawiamy nieszczelności, wymieniamy uszkodzone łaty i pokrycie. Przy większych remontach doradzimy, czy warto jeszcze łatać dach, czy lepiej pokryć go od nowa, licząc realny koszt obu rozwiązań.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Usuwanie przecieków</li>
-            <li class="relative pl-5 marker">Wymiana łat i kontrłat</li>
-            <li class="relative pl-5 marker">Wymiana pojedynczych dachówek</li>
-            <li class="relative pl-5 marker">Remonty częściowe i całkowite</li>
-          </ul>
-        </div>
-      </article>
-
-      <article id="wiaty-pergole" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1">
-          <img src="images/15.webp" alt="Drewniana pergola nad tarasem przy domu" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2">
-          <span class="font-mono text-red text-sm font-semibold">03</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Wiaty, zadaszenia i pergole</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Wiaty garażowe, zadaszenia nad tarasem i pergole budujemy z drewna konstrukcyjnego, dopasowane do bryły domu i miejsca, jakie masz na działce.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Wiaty garażowe wolnostojące i przy domu</li>
-            <li class="relative pl-5 marker">Zadaszenia tarasów</li>
-            <li class="relative pl-5 marker">Pergole drewniane</li>
-            <li class="relative pl-5 marker">Impregnacja i wykończenie drewna</li>
-          </ul>
+      <article id="krycie-dachow" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Krycie dachów</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Kompletne pokrycie dachu od deskowania i membrany po ułożenie ostatniej dachówki. Pracujemy na dachówce ceramicznej, cementowej i blachodachówce, dobranej do konstrukcji więźby i budżetu inwestycji.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Deskowanie i membrana dachowa</li>
+              <li class="relative pl-5 marker">Dachówka ceramiczna i cementowa</li>
+              <li class="relative pl-5 marker">Blachodachówka</li>
+              <li class="relative pl-5 marker">Wentylacja połaci dachowej</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/4.webp" data-caption="Montaż gąsiorów i dachówki ceramicznej na nowym pokryciu">
+              <img src="images/4.webp" alt="Montaż gąsiorów i dachówki ceramicznej na nowym pokryciu dachu" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Montaż gąsiorów i dachówki ceramicznej</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/16.webp" data-caption="Krycie dachu dachówką w trakcie realizacji">
+              <img src="images/16.webp" alt="Krycie dachu dachówką ceramiczną w trakcie realizacji" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/17.webp" data-caption="Dekarz przy pracy na dachu krytym dachówką ceramiczną">
+              <img src="images/17.webp" alt="Dekarz przy pracy na dachu krytym dachówką ceramiczną" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/3.webp" data-caption="Pokrycie dachu dachówką ceramiczną">
+              <img src="images/3.webp" alt="Dach kryty czerwoną dachówką ceramiczną" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/18.webp" data-caption="Gotowe pokrycie dachu w kolorze antracytu">
+              <img src="images/18.webp" alt="Gotowe pokrycie dachu dachówką w kolorze antracytu" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
         </div>
       </article>
 
-      <article id="rynny-obrobki" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1 md:order-2">
-          <img src="images/11.webp" alt="Zamontowany system rynnowy na budynku z elewacją drewnianą" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2 md:order-1">
-          <span class="font-mono text-red text-sm font-semibold">04</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Rynny i obróbki blacharskie</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Montujemy systemy rynnowe dobrane do spadku dachu i wykonujemy obróbki blacharskie w miejscach, które najczęściej przeciekają: kominy, okna połaciowe i pasy nadrynnowe.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Montaż rynien i rur spustowych</li>
-            <li class="relative pl-5 marker">Obróbki kominów</li>
-            <li class="relative pl-5 marker">Obróbki okien połaciowych</li>
-            <li class="relative pl-5 marker">Pasy nadrynnowe i podrynnowe</li>
-          </ul>
-        </div>
-      </article>
-
-      <article id="elewacje-podbitka" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1">
-          <img src="images/10.webp" alt="Podbitka i elewacja drewniana pod okapem dachu" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2">
-          <span class="font-mono text-red text-sm font-semibold">05</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Elewacje i podbitka drewniana</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Wykańczamy elewacje i podbitkę dachową w drewnie, od deskowania po malowanie impregnatem, dbając o to, żeby drewno wytrzymało kolejne sezony bez pękania i szarzenia.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Deskowanie elewacji</li>
-            <li class="relative pl-5 marker">Podbitka dachowa</li>
-            <li class="relative pl-5 marker">Malowanie i impregnacja</li>
-            <li class="relative pl-5 marker">Naprawa uszkodzonych fragmentów</li>
-          </ul>
+      <article id="remonty-dachow" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Pogotowie dachowe, remonty i naprawy</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Awaria, przeciek po burzy albo uszkodzenie po wichurze? Działamy w trybie pogotowia dachowego i szybko reagujemy na zgłoszenia, żeby zabezpieczyć dach, zanim szkody się powiększą. Naprawiamy też nieszczelności, wymieniamy uszkodzone łaty i pokrycie, a przy większych remontach doradzimy, czy warto jeszcze łatać dach, czy lepiej pokryć go od nowa. Zdarzają się też zlecenia od klientów, którzy kupili dom od dewelopera i trafili na niedoróbki na dachu, takie poprawki po zabudowie deweloperskiej wykonujemy równie chętnie.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Pogotowie dachowe, szybka reakcja na awarie</li>
+              <li class="relative pl-5 marker">Usuwanie przecieków</li>
+              <li class="relative pl-5 marker">Poprawki po zabudowie deweloperskiej</li>
+              <li class="relative pl-5 marker">Remonty częściowe i całkowite</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/19.webp" data-caption="Wełna mineralna rozerwana przez kuny">
+              <img src="images/19.webp" alt="Wełna mineralna w więźbie dachowej rozerwana przez kuny" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Wełna mineralna rozerwana przez kuny</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/20.webp" data-caption="Izolacja zniszczona przez kuny">
+              <img src="images/20.webp" alt="Izolacja termiczna dachu zniszczona przez kuny, przygotowana do wymiany" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/21.webp" data-caption="Naprawa okapu i rynny przy domu">
+              <img src="images/21.webp" alt="Naprawa obróbki okapu i rynny przy nowoczesnym domu" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/22.webp" data-caption="Naprawa uszkodzonej łaty przy okapie">
+              <img src="images/22.webp" alt="Naprawa uszkodzonej łaty i pokrycia przy okapie" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
         </div>
       </article>
 
-      <article id="ciesielstwo" class="svc-card grid md:grid-cols-2 gap-10 items-center">
-        <div class="svc-figure rounded-2xl overflow-hidden order-1 md:order-2">
-          <img src="images/2.webp" alt="Drewniana konstrukcja więźby wiaty w trakcie budowy" class="w-full h-72 sm:h-96 object-cover" loading="lazy" width="900" height="700" />
-        </div>
-        <div class="order-2 md:order-1">
-          <span class="font-mono text-red text-sm font-semibold">06</span>
-          <h2 class="mt-3 font-display font-800 text-3xl text-ink">Ciesielstwo dachowe</h2>
-          <p class="mt-4 text-ink/70 leading-[1.7]">Więźby dachowe oraz konstrukcje drewniane wiat i pergoli wykonujemy zgodnie ze sztuką ciesielską, z drewna suszonego i zabezpieczonego przed szkodnikami oraz wilgocią.</p>
-          <ul class="mt-5 space-y-2 text-sm text-ink/70">
-            <li class="relative pl-5 marker">Więźby dachowe</li>
-            <li class="relative pl-5 marker">Wzmocnienia konstrukcji</li>
-            <li class="relative pl-5 marker">Konstrukcje wiat i pergoli</li>
-            <li class="relative pl-5 marker">Zabezpieczenie drewna</li>
-          </ul>
+      <article id="hale-elewacje" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Dachy hal i elewacje wysokościowe</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Zajmujemy się też obiektami wielkopowierzchniowymi. Na halach przemysłowych i magazynowych wykonujemy elewacje oraz płaskie dachy kryte membraną, pracując z podnośnika koszowego tam, gdzie zwykła drabina czy rusztowanie nie wystarczą.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Elewacje hal przemysłowych i magazynów</li>
+              <li class="relative pl-5 marker">Dachy płaskie kryte membraną</li>
+              <li class="relative pl-5 marker">Prace z podnośnika koszowego na wysokości</li>
+              <li class="relative pl-5 marker">Przeglądy i naprawy dachów płaskich</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/23.webp" data-caption="Prace elewacyjne na hali z podnośnika koszowego">
+              <img src="images/23.webp" alt="Prace elewacyjne na hali przemysłowej wykonywane z podnośnika koszowego" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Prace elewacyjne na hali z podnośnika koszowego</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/24.webp" data-caption="Dach płaski z membraną i kominkami wentylacyjnymi">
+              <img src="images/24.webp" alt="Dach płaski kryty membraną z kominkami wentylacyjnymi" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
         </div>
       </article>
 
+      <article id="wiaty-pergole" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Wiaty, zadaszenia i pergole</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Wiaty garażowe, zadaszenia nad tarasem i pergole budujemy z drewna konstrukcyjnego, dopasowane do bryły domu i miejsca, jakie masz na działce. Realizujemy też projekty własne klienta.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Wiaty garażowe wolnostojące i przy domu</li>
+              <li class="relative pl-5 marker">Zadaszenia tarasów</li>
+              <li class="relative pl-5 marker">Pergole drewniane</li>
+              <li class="relative pl-5 marker">Impregnacja i wykończenie drewna</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/15.webp" data-caption="Zadaszenie tarasowe przy domu">
+              <img src="images/15.webp" alt="Drewniane zadaszenie tarasowe przy domu jednorodzinnym" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Zadaszenie tarasowe przy domu</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/25.webp" data-caption="Wiata garażowa z przyczepą">
+              <img src="images/25.webp" alt="Drewniana wiata garażowa z zaparkowaną przyczepą" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/26.webp" data-caption="Zadaszenie przy domu w trakcie budowy">
+              <img src="images/26.webp" alt="Zadaszenie tarasowe przy domu jednorodzinnym w trakcie budowy" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/27.webp" data-caption="Duża wiata drewniana w trakcie montażu">
+              <img src="images/27.webp" alt="Duża wiata drewniana na działce w trakcie montażu więźby" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="domki-narzedziowe" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Domki narzędziowe i konstrukcje na zlecenie</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Na życzenie klientów budujemy też domki narzędziowe i małe obiekty gospodarcze według własnych projektów, a sporadycznie stawiamy również domki szkieletowe na płycie fundamentowej, od fundamentu po dach.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Domki narzędziowe i gospodarcze na wymiar</li>
+              <li class="relative pl-5 marker">Domki szkieletowe na płycie fundamentowej</li>
+              <li class="relative pl-5 marker">Projekty własne, dopasowane do działki</li>
+              <li class="relative pl-5 marker">Realizacja od fundamentu po dach</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/30.webp" data-caption="Domek narzędziowy z drewnianą elewacją">
+              <img src="images/30.webp" alt="Nowoczesny domek narzędziowy z drewnianą elewacją i dachem jednospadowym" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Domek narzędziowy z drewnianą elewacją</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/31.webp" data-caption="Płyta fundamentowa pod domek szkieletowy">
+              <img src="images/31.webp" alt="Płyta fundamentowa ze zbrojeniem pod domek szkieletowy" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="rynny-obrobki" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Rynny, obróbki blacharskie i kominy</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Montujemy systemy rynnowe dobrane do spadku dachu i wykonujemy obróbki blacharskie w miejscach, które najczęściej przeciekają: kominy, okna połaciowe i pasy nadrynnowe. Wykonujemy też obróbki kominów murowanych z klinkieru i montujemy nowe czapy kominowe.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Montaż rynien i rur spustowych</li>
+              <li class="relative pl-5 marker">Obróbki kominów, w tym z klinkieru</li>
+              <li class="relative pl-5 marker">Obróbki okien połaciowych</li>
+              <li class="relative pl-5 marker">Pasy nadrynnowe i podrynnowe</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/11.webp" data-caption="System rynnowy na budynku z elewacją drewnianą">
+              <img src="images/11.webp" alt="Zamontowany system rynnowy na budynku z elewacją drewnianą" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">System rynnowy na budynku z elewacją drewnianą</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/32.webp" data-caption="Obróbka blacharska komina">
+              <img src="images/32.webp" alt="Obróbka blacharska komina wykonana na miarę" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/33.webp" data-caption="Nowa czapa kominowa ze stali nierdzewnej">
+              <img src="images/33.webp" alt="Nowa czapa kominowa ze stali nierdzewnej na kominie murowanym" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/34.webp" data-caption="Obróbka okapu z cegłą klinkierową">
+              <img src="images/34.webp" alt="Obróbka okapu z cegłą klinkierową i dachówką" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="elewacje-podbitka" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Elewacje i podbitka drewniana</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Wykańczamy elewacje i podbitkę dachową w drewnie, od deskowania po malowanie impregnatem, dbając o to, żeby drewno wytrzymało kolejne sezony bez pękania i szarzenia.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Deskowanie elewacji</li>
+              <li class="relative pl-5 marker">Podbitka dachowa</li>
+              <li class="relative pl-5 marker">Malowanie i impregnacja</li>
+              <li class="relative pl-5 marker">Naprawa uszkodzonych fragmentów</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/10.webp" data-caption="Podbitka i elewacja drewniana pod okapem dachu">
+              <img src="images/10.webp" alt="Podbitka i elewacja drewniana pod okapem dachu" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Podbitka i elewacja drewniana pod okapem dachu</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/35.webp" data-caption="Wykończona podbitka drewniana pod okapem">
+              <img src="images/35.webp" alt="Wykończona podbitka drewniana pod okapem dachu, widok narożnika" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="ciesielstwo" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Ciesielstwo dachowe</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Więźby dachowe oraz konstrukcje drewniane wiat i pergoli wykonujemy zgodnie ze sztuką ciesielską, z drewna suszonego i zabezpieczonego przed szkodnikami oraz wilgocią.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Więźby dachowe</li>
+              <li class="relative pl-5 marker">Wzmocnienia konstrukcji</li>
+              <li class="relative pl-5 marker">Konstrukcje wiat i pergoli</li>
+              <li class="relative pl-5 marker">Zabezpieczenie drewna</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/2.webp" data-caption="Drewniana konstrukcja więźby wiaty w trakcie budowy">
+              <img src="images/2.webp" alt="Drewniana konstrukcja więźby wiaty w trakcie budowy" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Drewniana konstrukcja więźby wiaty w trakcie budowy</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="gonty" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Gonty bitumiczne i pokrycia dachów</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Coraz częściej wybierany jest gont bitumiczny, zwłaszcza na dachach o nietypowej geometrii i domkach letniskowych. W tym sezonie realizujemy pokrycia gontem razem z pełną obróbką blacharską i montażem rynien.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Gont bitumiczny na dachach i lukarnach</li>
+              <li class="relative pl-5 marker">Pełna obróbka blacharska pod gont</li>
+              <li class="relative pl-5 marker">Montaż rynien do pokryć z gontu</li>
+              <li class="relative pl-5 marker">Dachy o nietypowej geometrii</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/36.webp" data-caption="Dach kryty gontem bitumicznym z lukarną">
+              <img src="images/36.webp" alt="Dach kryty gontem bitumicznym z trójkątną lukarną" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Dach kryty gontem bitumicznym z lukarną</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/37.webp" data-caption="Dach z gontu bitumicznego z oknem połaciowym">
+              <img src="images/37.webp" alt="Dach kryty gontem bitumicznym z oknem połaciowym" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="malowanie-elewacji-dachow" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Odnawianie i malowanie elewacji oraz dachów</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Poszerzyliśmy zespół o nową ekipę, która zajmuje się odnawianiem i malowaniem elewacji oraz dachów. Czyścimy dachówkę z mchu i porostów, malujemy i impregnujemy pokrycie dachowe, a także odświeżamy elewacje budynków, pracując z podnośnika koszowego tam, gdzie jest to potrzebne.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Malowanie i impregnacja dachów</li>
+              <li class="relative pl-5 marker">Odnawianie i malowanie elewacji</li>
+              <li class="relative pl-5 marker">Czyszczenie dachówki z mchu i porostów</li>
+              <li class="relative pl-5 marker">Prace z podnośnika koszowego</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/38.webp" data-caption="Czyszczenie połaci dachowej z podnośnika">
+              <img src="images/38.webp" alt="Czyszczenie połaci dachowej z użyciem podnośnika koszowego" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Czyszczenie połaci dachowej z podnośnika</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/39.webp" data-caption="Podnośnik koszowy przy elewacji i dachu">
+              <img src="images/39.webp" alt="Podnośnik koszowy przy elewacji i dachu podczas prac wysokościowych" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/40.webp" data-caption="Impregnacja dachówki metodą natryskową">
+              <img src="images/40.webp" alt="Impregnacja dachówki ceramicznej metodą natryskową" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="odsniezanie" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Zimowe utrzymanie dachów</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Zimą, gdy śniegu przybywa szybciej niż ktokolwiek się spodziewał, odśnieżamy dachy płaskie i strome, zabezpieczając przy tym rynny i kominy przed uszkodzeniem.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Odśnieżanie dachów płaskich i stromych</li>
+              <li class="relative pl-5 marker">Usuwanie sopli i nawisów śnieżnych</li>
+              <li class="relative pl-5 marker">Zabezpieczenie rynien i kominów</li>
+              <li class="relative pl-5 marker">Praca w pełnej uprzęży zabezpieczającej</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/41.webp" data-caption="Odśnieżanie płaskiego dachu zimą">
+              <img src="images/41.webp" alt="Odśnieżanie płaskiego dachu zimą, praca w uprzęży zabezpieczającej" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Odśnieżanie płaskiego dachu zimą</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="renowacja-kamienic" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Renowacja kamienic</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Podejmujemy się też renowacji dachów i elewacji kamienic w centrach miast, gdzie dostęp jest ograniczony. Posiadamy własne uprawnienia do kierowania ruchem, dzięki czemu prace przy jezdni i chodniku prowadzimy zgodnie z przepisami, korzystając z podnośnika koszowego.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Renowacja dachów kamienic</li>
+              <li class="relative pl-5 marker">Prace na elewacjach zabytkowych budynków</li>
+              <li class="relative pl-5 marker">Prace w ścisłej zabudowie miejskiej</li>
+              <li class="relative pl-5 marker">Uprawnienia do kierowania ruchem drogowym</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/42.webp" data-caption="Prace wysokościowe przy renowacji kamienicy">
+              <img src="images/42.webp" alt="Prace wysokościowe przy renowacji kamienicy w centrum miasta" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Prace wysokościowe przy renowacji kamienicy</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/43.webp" data-caption="Podnośnik koszowy przy renowacji elewacji">
+              <img src="images/43.webp" alt="Podnośnik koszowy podczas renowacji elewacji zabytkowej kamienicy" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article id="realizacje-zagranica" class="svc-card">
+        <h2 class="font-display font-800 text-3xl text-ink">Realizacje za granicą, Niemcy i Szwajcaria</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p class="text-ink/70 leading-[1.7]">Zimą, gdy sezon w Polsce zwalnia, wyjeżdżamy do pracy za granicą. W Niemczech współpracujemy przy dużych realizacjach z firmą Hanebutt, a w Szwajcarii wykonujemy prace elewacyjne w górskich miejscowościach.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              <li class="relative pl-5 marker">Współpraca z firmą Hanebutt w Niemczech</li>
+              <li class="relative pl-5 marker">Prace elewacyjne na dużych obiektach w Niemczech</li>
+              <li class="relative pl-5 marker">Realizacje w Szwajcarii</li>
+              <li class="relative pl-5 marker">Praca sezonowa na wysokościach za granicą</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button class="gal-item group relative rounded-xl overflow-hidden col-span-2" data-full="images/47.webp" data-caption="Prace elewacyjne w Szwajcarii, rusztowanie na tle Alp">
+              <img src="images/47.webp" alt="Rusztowanie elewacyjne na tle gór podczas realizacji w Szwajcarii" class="w-full h-56 sm:h-64 object-cover rounded-xl" loading="lazy" width="900" height="650" />
+              <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/80 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Realizacja w Szwajcarii</span>
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/44.webp" data-caption="Winda budowlana na elewacji, realizacja w Niemczech">
+              <img src="images/44.webp" alt="Winda budowlana przy elewacji podczas realizacji w Niemczech" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/45.webp" data-caption="Rusztowanie elewacyjne, realizacja w Niemczech">
+              <img src="images/45.webp" alt="Rusztowanie elewacyjne na wysokościowcu podczas realizacji w Niemczech" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+            <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/46.webp" data-caption="Kontrakt zagraniczny w Niemczech">
+              <img src="images/46.webp" alt="Kompleksowe rusztowanie elewacyjne, kontrakt zagraniczny w Niemczech" class="w-full h-28 sm:h-32 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FLOTA -->
+  <section class="bg-ink text-cloud">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+      <div class="max-w-2xl">
+        <h2 class="h-display text-3xl sm:text-4xl">Nasz sprzęt <span class="text-red">i flota</span></h2>
+        <p class="mt-4 text-cloud/70 leading-[1.7]">Własny transport i sprzęt pozwalają nam działać sprawnie, od małej naprawy po duże realizacje wymagające podnośnika koszowego.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/48.webp" data-caption="Samochód dostawczy PHU Nowrot Grzegorz">
+          <img src="images/48.webp" alt="Samochód dostawczy z oznakowaniem PHU Nowrot Grzegorz" class="w-full h-40 sm:h-48 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+          <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/90 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Samochód dostawczy</span>
+        </button>
+        <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/50.webp" data-caption="Transport materiałów budowlanych">
+          <img src="images/50.webp" alt="Samochód ciężarowy z przyczepą do transportu materiałów budowlanych" class="w-full h-40 sm:h-48 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+          <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/90 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Transport materiałów</span>
+        </button>
+        <button class="gal-item group relative rounded-xl overflow-hidden" data-full="images/49.webp" data-caption="Pojazd firmowy w drodze na budowę">
+          <img src="images/49.webp" alt="Pojazd firmowy PHU Nowrot Grzegorz przygotowany do wyjazdu na budowę" class="w-full h-40 sm:h-48 object-cover rounded-xl" loading="lazy" width="500" height="400" />
+          <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/90 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">W drodze na budowę</span>
+        </button>
+        <button class="gal-item group relative rounded-xl overflow-hidden bg-white" data-full="images/logo-badge.webp" data-caption="Oznakowanie floty PHU Nowrot Grzegorz">
+          <img src="images/logo-badge.webp" alt="Oznakowanie pojazdu, logo PHU Nowrot Grzegorz" class="w-full h-40 sm:h-48 object-contain rounded-xl p-3" loading="lazy" width="500" height="400" />
+          <span class="gal-caption absolute inset-x-0 bottom-0 p-3 text-left bg-gradient-to-t from-ink/90 via-ink/0 to-transparent text-white text-xs font-medium rounded-b-xl opacity-0 group-hover:opacity-100">Oznakowanie floty</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -289,6 +566,17 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" data-open="false" class="fixed inset-0 z-[100] bg-ink/92 flex items-center justify-center p-5">
+  <button id="lightbox-close" aria-label="Zamknij podgląd" class="btn absolute top-5 right-5 h-11 w-11 grid place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure class="max-w-4xl w-full">
+    <img id="lightbox-img" src="" alt="" class="w-full max-h-[75vh] object-contain rounded-xl" />
+    <figcaption id="lightbox-caption" class="mt-4 text-center text-cloud/80 text-sm"></figcaption>
+  </figure>
+</div>
+
 <style>
   .marker::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 9999px; background: #D0201B; }
 </style>
@@ -314,6 +602,30 @@
   }
   menuBtn.addEventListener('click', () => setMenu(!menuOpen));
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.setAttribute('data-open', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.setAttribute('data-open', 'false');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.gal-item').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn.dataset.full, btn.dataset.caption));
+  });
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 
 </body>
